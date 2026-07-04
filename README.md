@@ -14,6 +14,8 @@ This project is a fully functional software router built from scratch using **Sl
 
 ---
 
+<img width="940" height="619" alt="image" src="https://github.com/user-attachments/assets/ff8f09e2-cdbd-4446-9953-b634233e1169" />
+
 ##  Step-by-Step Configuration Guide
 
 Here is exactly how I configured the Slackware router and the Kali Linux client:
@@ -54,8 +56,12 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 What it does: Right before a packet leaves the router, its private source IP is masked. When the internet replies, the router knows exactly which local PC to forward the response to.
 
+<img width="940" height="728" alt="image" src="https://github.com/user-attachments/assets/c224d177-699d-40dc-bbe6-8c878aea5e14" />
+
+
 
 5. Configuring the Kali Linux Client
+   
 Finally, I had to set up the Kali machine so it could talk to the new router:
 ```bash
 # Assign a unique static IP address in the local pool
@@ -67,6 +73,8 @@ ip route add default via 192.168.1.1
 # Bring the interface up
 ip link set eth0 up
 ```
+<img width="940" height="1167" alt="image" src="https://github.com/user-attachments/assets/069333ef-fa01-48e4-88ca-3c0e63903b78" />
+
 
 ### Troubleshooting & Verification
 Setting up virtual networks always comes with bugs. Here are the main issues I solved during the project:
